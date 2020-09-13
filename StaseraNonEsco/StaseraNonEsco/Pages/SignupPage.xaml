@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="StaseraNonEsco.Pages.SignupPage"
+             BackgroundColor="AntiqueWhite"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="20"
+                         Margin="20,20,20,30">
+                <Image 
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand"
+                       Source="kfc.png"
+                       Aspect="AspectFit" />
+                <StackLayout >
+                    <Frame Margin="20,10,20,0" 
+                           CornerRadius="50"
+                           >
+                        <StackLayout Padding="30,10,30,10" Spacing="20">
+                        <Entry 
+                               Placeholder="Nome e Cognome"
+                               PlaceholderColor="#80574D"
+                               TextColor="#80574D"
+                               FontFamily="RalewayRegular"
+                               x:Name="EntName"
+                               Keyboard="Text" />
+                        <Entry Placeholder="Email"
+                               FontFamily="RalewayRegular"
+                               PlaceholderColor="#80574D"
+                               TextColor="#80574D"
+                               x:Name="EntEmail"
+                               Keyboard="Email" />
+                        <Entry Placeholder="Password"
+                               PlaceholderColor="#80574D"
+                               FontFamily="RalewayRegular"
+                               TextColor="#80574D"
+                               IsPassword="True"
+                               x:Name="EntPassword"
+                               Keyboard="Default" />
+                        <Entry Placeholder="Conferma Password"
+                               PlaceholderColor="#80574D"
+                               FontFamily="RalewayRegular"
+                               TextColor="#80574D"
+                               IsPassword="True"
+                               x:Name="EntConfirmPassword"
+                               Keyboard="Default" />
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+                
+                <StackLayout Padding="70,20,70,0" >
+                <Button Text="CONTINUA"
+                        TextColor="#DAAE6F"
+                        BackgroundColor="#2D150B"
+                        FontAttributes="Bold"
+                        FontFamily="RalewayBold"
+                        CornerRadius="50"
+                        x:Name="BtnSignUp"
+                        Clicked="BtnSignUp_Clicked"/>
+                <Label Text="Hai gia un account?"
+                       FontFamily="RalewayMedium"
+                       HorizontalTextAlignment="Center"
+                       TextColor="#2D150B" />
+                <Button Text="Login"
+                        FontFamily="RalewayBold"
+                        BackgroundColor="#2D150B"
+                        TextColor="#DAAE6F"
+                        FontAttributes="Bold"
+                        CornerRadius="50"
+                        x:Name="BtnLogin" 
+                        Clicked="BtnLogin_Clicked"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

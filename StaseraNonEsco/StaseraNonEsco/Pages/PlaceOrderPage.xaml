@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="StaseraNonEsco.Pages.PlaceOrderPage"
+             BackgroundColor="AntiqueWhite">
+    <ContentPage.Content>
+        <StackLayout Spacing="20"
+                     Margin="25">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="8*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                
+                <Label Grid.Column="1"
+                       TextColor="#2D150B"
+                       FontFamily="RalewayBold"
+                       Text="Effettua l'ordine"
+                       FontSize="25"
+                       VerticalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       HorizontalOptions="Center" />
+            </Grid>
+            <Frame HasShadow="True"
+                   Padding="25"
+                   Margin="0,30,0,30"
+                   CornerRadius="35">
+                <StackLayout Margin="0,40,0,40" Spacing="10">
+                    <Label Text="Informazioni Consegna" Margin="0,0,0,20"
+                           FontAttributes="Bold"
+                           FontSize="Large"
+                           FontFamily="RalewayBold"
+                           HorizontalTextAlignment="Center"
+                           TextColor="#2D150B" />
+                    <Entry Placeholder="Nome"
+                           FontFamily="RalewayRegular"
+                           PlaceholderColor="#80574D"
+                           TextColor="#80574D"
+                           x:Name="EntName"
+                           Keyboard="Text" />
+                    <Entry Placeholder="Telefono"
+                           FontFamily="RalewayRegular"
+                           PlaceholderColor="#80574D"
+                           TextColor="#80574D"
+                           x:Name="EntPhone"
+                           Keyboard="Numeric" />
+                    <Editor Placeholder="Indirizzo"
+                            FontFamily="RalewayRegular"
+                            HeightRequest="100"
+                            PlaceholderColor="#80574D"
+                            TextColor="#80574D"
+                            x:Name="EntAddress"
+                            Keyboard="Default" />
+
+
+                </StackLayout>
+            </Frame>
+            <Button Margin="50,0,50,0"
+                    Text="Procedi con l'ordine"
+                    FontFamily="RalewayBold"
+                    BackgroundColor="#2D150B"
+                    CornerRadius="50"
+                    TextColor="#FFC15A"
+                    x:Name="BtnPlaceOrder" 
+                    Clicked="BtnPlaceOrder_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

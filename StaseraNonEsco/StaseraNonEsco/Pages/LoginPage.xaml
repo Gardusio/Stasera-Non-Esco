@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="StaseraNonEsco.Pages.LoginPage"
+             BackgroundColor="AntiqueWhite"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout Spacing="20"
+                     Margin="25">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="8*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Image 
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand"
+                       Source="kfc.png"
+                       Aspect="AspectFit"
+                       Grid.Column="1"
+                       Grid.Row="0" />
+            </Grid>
+                <Frame Margin ="0,20,0,20"
+                       CornerRadius="50">
+                <StackLayout Margin="0,10,0,50">
+                    <Label 
+                           Text="Inserisci i tuoi dati"
+                           FontAttributes="Bold"
+                           FontFamily="RalewayBold"
+                           FontSize="Title"
+                           HorizontalTextAlignment="Center"
+                           TextColor="#2D150B" />
+                    <StackLayout Padding="0,20,0,0" Spacing="20">
+                    <Entry Placeholder="Email"
+                           PlaceholderColor="#2D150B"
+                           TextColor="#2D150B"
+                           FontFamily="RalewayRegular"
+                           x:Name="EntEmail"
+                           Keyboard="Email" />
+                    <Entry Placeholder="Password"
+                           PlaceholderColor="#2D150B"
+                           FontFamily="RalewayRegular"
+                           TextColor="#2D150B"
+                           IsPassword="True"
+                           x:Name="EntPassword"
+                           Keyboard="Default" />
+                    </StackLayout>
+                </StackLayout>
+                </Frame>
+
+                <Button Padding="70,0,70,0"
+                    Text="Login"
+                    FontFamily="RalewayBold"
+                    BackgroundColor="#2D150B"
+                    TextColor="#DAAE6F"
+                    FontAttributes="Bold"
+                    HorizontalOptions="CenterAndExpand"
+                    CornerRadius="50"
+                    x:Name="BtnLogin" 
+                    Clicked="BtnLogin_Clicked"/>
+        </StackLayout>
+            </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

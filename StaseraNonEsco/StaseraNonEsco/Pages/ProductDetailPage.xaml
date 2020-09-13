@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="StaseraNonEsco.Pages.ProductDetailPage"
+             BackgroundColor="AntiqueWhite">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Grid>
+                    <Image x:Name="ImgProduct"
+                           Aspect="AspectFill"
+                           HeightRequest="300" />
+                    <Image Source="close"
+                           HeightRequest="30"
+                           WidthRequest="30"
+                           Margin="10,15,20,20"
+                           VerticalOptions="Start"
+                           HorizontalOptions="Start">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="TapBack" Tapped="TapBack_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>
+                <StackLayout Margin="20">
+                    <StackLayout Orientation="Horizontal">
+                        <Label x:Name="LblName"
+                               TextColor="#2D150B"
+                               FontFamily="RalewayBold"
+                               HorizontalOptions="Start"
+                               FontSize="Large"
+                               FontAttributes="Bold"/>
+                        <StackLayout HorizontalOptions="EndAndExpand"
+                                     Orientation="Horizontal">
+                            <Label x:Name="LblPrice"
+                                   TextColor="#2D150B"
+                                   FontSize="25" 
+                                   FontFamily="RalewayBold"
+                                   FontAttributes="Bold"/>
+                            <Label Text="€"
+                                   TextColor="#2D150B"
+                                   FontSize="25" 
+                                   FontAttributes="Bold"
+                                   FontFamily="RalewayBold"/>
+                        </StackLayout>
+                    </StackLayout>
+                  
+                    <Label x:Name="LblDetail"
+                           Margin="0,20,0,0" 
+                           TextColor="#2D150B"
+                           FontSize="Medium" 
+                           FontFamily="RalewayMedium"
+                           HorizontalTextAlignment="Center"
+                           VerticalTextAlignment="Center"/>
+                </StackLayout>
+                <StackLayout Spacing="20"
+                             Orientation="Horizontal"
+                             VerticalOptions="EndAndExpand"
+                             HorizontalOptions="Center"
+                             Margin="0,10,0,40">
+                    <Image HeightRequest="40"
+                           Source="minus.png">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="TapDecrement" Tapped="TapDecrement_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label x:Name="LblQty"
+                           Text="1"
+                           FontSize="Large"
+                           TextColor="#2D150B"
+                           FontFamily="RalewayBold"
+                           VerticalTextAlignment="Center" />
+                    <Image HeightRequest="40"
+                           Source="plus.png">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="TapIncrement" Tapped="TapIncrement_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" BackgroundColor="#2D150B">
+                    <StackLayout HorizontalOptions="FillAndExpand"
+                                 Margin="30,10,0,10">
+                        <Label Text="Totale"
+                               TextColor="#F8E2D7"
+                               FontSize="Medium" 
+                                FontFamily="RalewaySemiBold"/>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="€"
+                                   TextColor="#FFC943"
+                                   FontSize="Large"
+                                   FontFamily="RalewayBold"/>
+                            <Label x:Name="LblTotalPrice"
+                                   TextColor="#FFC943"
+                                   FontSize="Large"
+                                   FontFamily="RalewayBold"/>
+                            
+                        </StackLayout>
+                    </StackLayout>
+                    <Button x:Name="BtnAddToCart"
+                            Text="Aggiungi"
+                            HorizontalOptions="FillAndExpand"
+                            BackgroundColor="#FFC943"
+                            TextColor="#190800" 
+                            FontFamily="RalewayBold"
+                            Clicked="BtnAddToCart_Clicked"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

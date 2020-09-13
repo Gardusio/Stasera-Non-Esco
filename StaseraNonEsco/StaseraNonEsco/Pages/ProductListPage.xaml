@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="StaseraNonEsco.Pages.ProductListPage"
+             BackgroundColor="#2D150B">
+    <!--#2D150B-->
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid Margin="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="8*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="7*"/>
+                    <RowDefinition Height="0.2*"/>
+                </Grid.RowDefinitions>
+                <Image Source="backarrow.png"
+                       Grid.Column="0"
+                       Grid.Row="0"
+                       HorizontalOptions="Center">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="TapBack" Tapped="TapBack_Tapped" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label x:Name="LblCategoryName"
+                       Grid.Column="1"
+                       Grid.Row="0"
+                       TextColor="AntiqueWhite"
+                       FontSize="30"
+                       FontFamily="RalewaySemiBold"
+                       HorizontalTextAlignment="Center" />
+                <BoxView Grid.Row="1" Grid.ColumnSpan="3" 
+                         WidthRequest="100" HeightRequest="1" BackgroundColor="AntiqueWhite"/>
+            </Grid>
+            
+
+            <ListView Margin="0,10,0,0"
+                      x:Name="CvProducts"
+                      SelectionMode="Single"
+                      ItemsSource="{Binding ProductByCategoryCollection}"
+                      ItemSelected="CvProducts_SelectionChanged"
+                      CachingStrategy="RecycleElement"
+                      HasUnevenRows="False"
+                      RowHeight="100"
+                      SeparatorColor="#DAAE6F">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell >
+                            <StackLayout Margin="20,10,20,10" Orientation="Horizontal" Spacing="10" >
+                                <Frame Padding="0"
+                                       CornerRadius="90"
+                                       IsClippedToBounds="True"
+                                       HeightRequest="80"
+                                       WidthRequest="80"
+                                       HorizontalOptions="Start">
+
+                                    <Image Aspect="AspectFill"
+                                           HorizontalOptions="FillAndExpand"
+                                           VerticalOptions="FillAndExpand"
+                                           Source="{Binding FullImageUrl}"/>
+                                </Frame>
+
+                                <StackLayout Margin="10,20,0,0" HorizontalOptions="StartAndExpand">
+                                    <Label 
+                                           TextColor="#DAAE6F"
+                                           Text="{Binding name}"
+                                           FontFamily="RalewayMedium"
+                                           FontSize="Medium"
+                                           />
+                                    
+                                    <Label TextColor="AntiqueWhite"
+                                           Text="Descrizione Semplice"
+                                           FontSize="Small"
+                                           FontFamily="RalewayRegular"
+                                           />
+                                    
+                                </StackLayout>
+
+                                <Label TextColor="#FFC943"
+                                       Margin="0,0,10,0"
+                                       Text="{Binding price ,StringFormat='€{0}'}"
+                                       FontSize="25"
+                                       FontFamily="RalewayBold"
+                                       VerticalTextAlignment="Center"/>
+                                
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <!--
+            <CollectionView x:Name="CvProducts"
+                            SelectionMode="Single"
+                            SelectionChanged="CvProducts_SelectionChanged">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical"
+                                     Span="2" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Spacing="5"
+                                     Padding="10"
+                                     Margin="15,0,15,0"
+                                     Orientation="Vertical">
+
+                            <Frame Padding="0"
+                                   CornerRadius="90"
+                                   IsClippedToBounds="True"
+                                   HeightRequest="130"
+                                   WidthRequest="130"
+                                   HorizontalOptions="Center"
+                                   HasShadow="True">
+
+                                <Image Aspect="AspectFill"
+                                   HorizontalOptions="FillAndExpand"
+                                   VerticalOptions="FillAndExpand"
+                                   Source="{Binding FullImageUrl}"/>
+                            </Frame>
+
+                            <Label Margin="0,10,0,10"
+                                   TextColor="#DAAE6F"
+                                   Text="{Binding name}"
+                                   FontFamily="RalewayMedium"
+                                   FontSize="Medium"
+                                   HorizontalTextAlignment="Center"/>
+
+                            <Label TextColor="#FFC943"
+                                   Text="{Binding price ,StringFormat='€{0}'}"
+                                   FontSize="Large"
+                                   FontAttributes="Bold"
+                                   FontFamily="RalewayBold"
+                                   HorizontalTextAlignment="Center"/>
+                            
+                            <BoxView 
+                                    HeightRequest="2" 
+                                    WidthRequest="100" 
+                                    BackgroundColor="#2D150B" 
+                                    Margin="20,10,20,10"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            -->
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

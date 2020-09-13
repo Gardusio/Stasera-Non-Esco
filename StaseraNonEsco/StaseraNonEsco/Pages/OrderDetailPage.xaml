@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="StaseraNonEsco.Pages.OrderDetailPage"
+             BackgroundColor="AntiqueWhite">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid Margin="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="8*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Image Source="backarrow.png"
+                       Grid.Column="0"
+                       HorizontalOptions="Center">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="TapBack" Tapped="TapBack_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Grid.Column="1"
+                       TextColor="#2D150B"
+                       Text="Dettagli"
+                       FontSize="29"
+                       FontFamily="RalewayBold"
+                       HorizontalTextAlignment="Center" />
+            </Grid>
+            <ListView HasUnevenRows="True"
+                      x:Name="LvOrderDetail"
+                      SelectionMode="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="20">
+                                <Label TextColor="#2D150B"
+                                       FontSize="Medium"
+                                       FontFamily="RalewayBold"
+                                       Text="{Binding product.name}" />
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="3.3*" />
+                                        <ColumnDefinition Width="3.3*" />
+                                        <ColumnDefinition Width="3.4*" />
+                                    </Grid.ColumnDefinitions>
+                                    <StackLayout Grid.Column="0">
+                                        <Label Text="Qta"
+                                               FontSize="Medium"
+                                               FontFamily="RalewayRegular"
+                                               TextColor="#2D150B"
+                                               HorizontalOptions="Center" />
+                                        <Label TextColor="#2D150B"
+                                               FontSize="Medium"
+                                               FontFamily="RalewayRegular"
+                                               HorizontalOptions="Center"
+                                               Text="{Binding qty}" />
+                                    </StackLayout>
+                                    <StackLayout Grid.Column="1">
+                                        <Label Text="Prezzo"
+                                               FontSize="Medium"
+                                               FontFamily="RalewayRegular"
+                                               TextColor="#2D150B"
+                                               HorizontalOptions="Center" />
+                                        <Label FontSize="Medium"
+                                               FontFamily="RalewayRegular"
+                                               TextColor="#2D150B"
+                                               HorizontalOptions="Center"
+                                               Text="{Binding price,StringFormat='x {0}'}" />
+                                    </StackLayout>
+                                    <StackLayout Grid.Column="2">
+                                        <Label Text="Sub Totale"
+                                               FontSize="Medium"
+                                               FontFamily="RalewayRegular"
+                                               TextColor="#2D150B"
+                                               HorizontalOptions="Center" />
+                                        <Label TextColor="#80574D"
+                                               HorizontalOptions="Center"
+                                               Text="{Binding totalAmount , StringFormat='{0} $'}"/>
+                                    </StackLayout>
+                                </Grid>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.Footer>
+                    <StackLayout Margin="20">
+                        <Label HorizontalOptions="End"
+                               Text="Totale"
+                               FontSize="Large"
+                               FontFamily="RalewayBold"
+                               TextColor="#2D150B"/>
+                        <Label HorizontalOptions="End"
+                               x:Name="LblTotalPrice"
+                               FontSize="Large"
+                               FontFamily="RalewayBold"
+                               TextColor="#2D150B"/>
+                    </StackLayout>
+                </ListView.Footer>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
