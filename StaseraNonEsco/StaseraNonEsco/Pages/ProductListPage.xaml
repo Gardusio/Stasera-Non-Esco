@@ -8,12 +8,6 @@
              BackgroundColor="#2D150B">
     <!--#2D150B-->
     <ContentPage.Content>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
         <StackLayout>
             <Grid ColumnSpacing="0"
                   HorizontalOptions="FillAndExpand"
@@ -81,8 +75,7 @@
                        Aspect="AspectFit"
                        Grid.Row="0"
                        Grid.Column="1"
-                       Grid.RowSpan="3" 
-                       />
+                       Grid.RowSpan="3"/>
             </Grid>
 
             
@@ -99,7 +92,52 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell >
-                            <StackLayout Margin="20,10,20,10" Orientation="Horizontal" Spacing="10" >
+                            <Grid Margin="20,10,20,10" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="3*"/>
+                                    <ColumnDefinition Width="7*"/>
+                                    <ColumnDefinition Width="3*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Frame Grid.Column="0"
+                                       Padding="0"
+                                       CornerRadius="90"
+                                       IsClippedToBounds="True"
+                                       HeightRequest="80"
+                                       WidthRequest="80"
+                                       HorizontalOptions="Start">
+
+                                    <Image Aspect="AspectFill"
+                                           HorizontalOptions="FillAndExpand"
+                                           VerticalOptions="FillAndExpand"
+                                           Source="{Binding FullImageUrl}"/>
+                                </Frame>
+
+                                <StackLayout Grid.Column="1" Margin="10,20,0,0" HorizontalOptions="StartAndExpand">
+                                    <Label 
+                                           TextColor="#DAAE6F"
+                                           Text="{Binding name}"
+                                           FontFamily="RalewayMedium"
+                                           FontSize="Medium"/>
+
+                                    <Label TextColor="AntiqueWhite"
+                                           Text="Descrizione Semplice"
+                                           FontSize="Small"
+                                           FontFamily="RalewayRegular"/>
+
+                                </StackLayout>
+
+                                <Label Grid.Column="2"
+                                       TextColor="#FFC943"
+                                       Margin="30,0,0,0"
+                                       Text="{Binding price ,StringFormat='€{0}'}"
+                                       FontSize="25"
+                                       FontFamily="RalewayBold"
+                                       VerticalTextAlignment="Center"/>
+
+
+                            </Grid>
+                            <!--<StackLayout Margin="20,10,20,10" Orientation="Horizontal" Spacing="10" >
                                 <Frame Padding="0"
                                        CornerRadius="90"
                                        IsClippedToBounds="True"
@@ -135,45 +173,17 @@
                                        FontSize="25"
                                        FontFamily="RalewayBold"
                                        VerticalTextAlignment="Center"/>
-                                
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <!--
-           <Grid Margin="20">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*" />
-                    <ColumnDefinition Width="8*" />
-                    <ColumnDefinition Width="1*" />
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="2.5*"/>
-                    <RowDefinition Height="0.2*"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <Image Source="backarrow.png"
-                       Grid.Column="0"
-                       Grid.Row="0"
-                       HorizontalOptions="Center">
-                    <Image.GestureRecognizers>
-                        <TapGestureRecognizer x:Name="TapBack" Tapped="TapBack_Tapped" />
-                    </Image.GestureRecognizers>
-                </Image>
-                <Label x:Name="LblCategoryName"
-                       Grid.Column="1"
-                       Grid.Row="0"
-                       TextColor="AntiqueWhite"
-                       FontSize="30"
-                       FontFamily="RalewaySemiBold"
-                       HorizontalTextAlignment="Center" />
-                <BoxView Grid.Row="1" Grid.ColumnSpan="3" 
-                         WidthRequest="100" HeightRequest="1" BackgroundColor="AntiqueWhite"/>
-            </Grid>
+            </StackLayout>
             -->
-
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
-        </Grid>
     </ContentPage.Content>
 </ContentPage>
