@@ -33,6 +33,11 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AndroidLinkMode>None</AndroidLinkMode>
+    <AotAssemblies>false</AotAssemblies>
+    <EnableLLVM>false</EnableLLVM>
+    <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
+    <BundleAssemblies>false</BundleAssemblies>
+    <AndroidLinkTool>proguard</AndroidLinkTool>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -97,19 +102,15 @@
       <Name>StaseraNonEsco</Name>
     </ProjectReference>
   </ItemGroup>
-  
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\backarrow.png" />
   </ItemGroup>
-  
-    <ItemGroup>
+  <ItemGroup>
     <AndroidResource Include="Resources\drawable\smallBanner.png" />
   </ItemGroup>
-  
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\trash.png" />
   </ItemGroup>
-  
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\banner.png" />
   </ItemGroup>
@@ -143,15 +144,12 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\backarrow.png" />
   </ItemGroup>
-  
-   <ItemGroup>
+  <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\smallBanner.png" />
   </ItemGroup>
-  
-   <ItemGroup>
+  <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\trash.png" />
   </ItemGroup>
-  
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\banner.png" />
   </ItemGroup>
@@ -188,13 +186,12 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-mdpi\backarrow.png" />
   </ItemGroup>
-   <ItemGroup>
+  <ItemGroup>
     <AndroidResource Include="Resources\drawable-mdpi\smallBanner.png" />
   </ItemGroup>
-    <ItemGroup>
+  <ItemGroup>
     <AndroidResource Include="Resources\drawable-mdpi\trash.png" />
   </ItemGroup>
-  
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-mdpi\banner.png" />
   </ItemGroup>
@@ -225,17 +222,16 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-mdpi\plus.png" />
   </ItemGroup>
-
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-mdpi\shopping_cart.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-xhdpi\backarrow.png" />
   </ItemGroup>
-     <ItemGroup>
+  <ItemGroup>
     <AndroidResource Include="Resources\drawable-xhdpi\smallBanner.png" />
   </ItemGroup>
-    <ItemGroup>
+  <ItemGroup>
     <AndroidResource Include="Resources\drawable-xhdpi\trash.png" />
   </ItemGroup>
   <ItemGroup>
@@ -271,19 +267,16 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-xhdpi\shopping_cart.png" />
   </ItemGroup>
-  
-
-     <ItemGroup>
+  <ItemGroup>
     <AndroidResource Include="Resources\drawable-xxhdpi\smallBanner.png" />
   </ItemGroup>
-   <ItemGroup>
+  <ItemGroup>
     <AndroidResource Include="Resources\drawable-xxhdpi\backarrow.png" />
   </ItemGroup>
-  
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-xxhdpi\banner.png" />
   </ItemGroup>
-    <ItemGroup>
+  <ItemGroup>
     <AndroidResource Include="Resources\drawable-xxhdpi\trash.png" />
   </ItemGroup>
   <ItemGroup>
@@ -328,10 +321,10 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-xxxhdpi\close.png" />
   </ItemGroup>
-     <ItemGroup>
+  <ItemGroup>
     <AndroidResource Include="Resources\drawable-xxxhdpi\smallBanner.png" />
   </ItemGroup>
-    <ItemGroup>
+  <ItemGroup>
     <AndroidResource Include="Resources\drawable-xxxhdpi\trash.png" />
   </ItemGroup>
   <ItemGroup>
