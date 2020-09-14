@@ -10,52 +10,52 @@
              >
     <ContentPage.Content>
         <StackLayout>
-                <Grid ColumnSpacing="0"
+            <Grid ColumnSpacing="0"
                   HorizontalOptions="FillAndExpand"
                   VerticalOptions="Start"
                   RowSpacing="0">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="20" />
-                        <RowDefinition Height="55" />
-                        <RowDefinition Height="55" />
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="55" />
+                    <RowDefinition Height="55" />
 
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="1*" />
-                        <ColumnDefinition Width="8*" />
-                        <ColumnDefinition Width="1*" />
-                    </Grid.ColumnDefinitions>
-                    <Image Grid.Row="0"
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="8*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Image Grid.Row="0"
                        Grid.Column="0"
                        Grid.RowSpan="4"
                        Grid.ColumnSpan="3"
                        Source="banner.png"
                        Aspect="AspectFill" />
-                    <StackLayout Orientation="Horizontal"
+                <StackLayout Orientation="Horizontal"
                              Grid.Row="1"
                              Grid.Column="0"
                              Grid.ColumnSpan="3">
-                        <Image HorizontalOptions="Start"
+                    <Image HorizontalOptions="Start"
                            Margin="20,4,0,20"
                            Source="backarrow.png"
                                Grid.RowSpan="2">
-                                                      
-                            <Image.GestureRecognizers>
-                                <TapGestureRecognizer x:Name="TapBack" Tapped="TapBack_Tapped" />
-                            </Image.GestureRecognizers>
-                        </Image>
-                        <Grid HorizontalOptions="EndAndExpand"
+
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="TapBack" Tapped="TapBack_Tapped" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Grid HorizontalOptions="EndAndExpand"
                           Margin="0,0,20,0">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*" />
-                                <RowDefinition Height="*" />
-                                <RowDefinition Height="*" />
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="4*" />
-                                <ColumnDefinition Width="6*" />
-                            </Grid.ColumnDefinitions>
-                            <Image 
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*" />
+                            <ColumnDefinition Width="6*" />
+                        </Grid.ColumnDefinitions>
+                        <Image 
                                Margin="0,5,0,2"
                                VerticalOptions="Center"
                                HorizontalOptions="Center"
@@ -65,12 +65,12 @@
                                Grid.RowSpan="2"
                                Grid.ColumnSpan="3" />
 
-                            <Grid.GestureRecognizers>
-                                <TapGestureRecognizer x:Name="TapClearCart" Tapped="TapClearCart_Tapped" />
-                            </Grid.GestureRecognizers>
-                        </Grid>
-                    </StackLayout>
-                    <Image Margin="10,15,0,20"
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="TapClearCart" Tapped="TapClearCart_Tapped" />
+                        </Grid.GestureRecognizers>
+                    </Grid>
+                </StackLayout>
+                <Image Margin="10,15,0,20"
                        HorizontalOptions="Center"
                        VerticalOptions="Center"
                        Source="kfc.png"
@@ -79,75 +79,75 @@
                        Grid.Column="1"
                        Grid.RowSpan="3" 
                        />
-                </Grid>
+            </Grid>
 
-                <Label Margin="10" HorizontalOptions="Center" 
+            <Label Margin="14,10,10,10" HorizontalOptions="Center" 
                        Text="Hai scelto"
                        FontFamily="RalewayBold"
                        FontSize="25"/>
 
-                <ListView x:Name="LvShoppingCart"
+            <ListView x:Name="LvShoppingCart"
                       SelectionMode="None"
                       Margin="0,10,0,0"
                       CachingStrategy="RecycleElement"
                       HasUnevenRows="True"
                       SeparatorColor="#2D150B">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell >
-                                <StackLayout Margin="20,10,20,10" >
-                                    <Label TextColor="#2D150B"
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell >
+                            <StackLayout Margin="20,10,20,10" >
+                                <Label TextColor="#2D150B"
                                        FontSize="Large"
                                        FontFamily="RalewayBold"
                                        Text="{Binding productName}"/>
-                                    <StackLayout Orientation="Horizontal">
-                                        <Label CharacterSpacing="1"
+                                <StackLayout Orientation="Horizontal">
+                                    <Label CharacterSpacing="1"
                                            TextColor="#2D150B"
                                            FontSize="Large"
                                            FontFamily="RalewayMedium"
                                            Text="{Binding qty}"/>
-                                        <Label Text="x"
+                                    <Label Text="x"
                                            TextColor="#2D150B"
                                            FontSize="Medium" />
-                                        <Label CharacterSpacing="1"
+                                    <Label CharacterSpacing="1"
                                            TextColor="#2D150B"
                                            FontSize="Large"
                                            Text="{Binding price, StringFormat='{0}€'}"/>
 
-                                        <Label CharacterSpacing="1"
+                                    <Label CharacterSpacing="1"
                                            TextColor="#2D150B"
                                            FontSize="25"
                                            FontFamily="RalewayBold"
                                            HorizontalOptions="EndAndExpand"
                                            Text="{Binding totalAmount ,StringFormat='{0}€'}"/>
-                                    </StackLayout>
                                 </StackLayout>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
 
 
-                <StackLayout Orientation="Horizontal"
+            <StackLayout Orientation="Horizontal"
                        BackgroundColor="#2D150B">
-                    <StackLayout HorizontalOptions="FillAndExpand"
+                <StackLayout HorizontalOptions="FillAndExpand"
                              Margin="30,10,0,10">
-                        <Label Text="Totale"
+                    <Label Text="Totale"
                            TextColor="#DAAE6F"
                            FontSize="Medium"
                            FontFamily="RalewaySemiBold"/>
-                        <StackLayout Orientation="Horizontal">
-                            <Label x:Name="LblTotalPrice"
+                    <StackLayout Orientation="Horizontal">
+                        <Label x:Name="LblTotalPrice"
                                TextColor="#FFC943"
                                FontSize="Large"
                                FontFamily="RalewayBold"/>
-                            <Label Text="€"
+                        <Label Text="€"
                                FontFamily="RalewayBold"
                                TextColor="#FFC943"
                                FontSize="Large" />
-                        </StackLayout>
                     </StackLayout>
-                    <Button HorizontalOptions="FillAndExpand"
+                </StackLayout>
+                <Button HorizontalOptions="FillAndExpand"
                         BackgroundColor="#FFC943"
                         TextColor="#2D150B"
                         Text="Procedi"
@@ -155,49 +155,8 @@
                         FontSize="Medium"
                         x:Name="BtnProceed" 
                         Clicked="BtnProceed_Clicked"/>
-                </StackLayout>
             </StackLayout>
-
-
-        <!--
-            <StackLayout Orientation="Horizontal" Background="yellow">
-            <Grid Margin="20" RowSpacing="20">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*" />
-                    <ColumnDefinition Width="8*" />
-                    <ColumnDefinition Width="1*" />
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="7*" />
-                    <RowDefinition Height="0.2*" />
-                </Grid.RowDefinitions>
-                <Image Source="backarrow.png"
-                       Grid.Column="0"
-                       Grid.Row="0">
-                    <Image.GestureRecognizers>
-                        <TapGestureRecognizer x:Name="TapBack" Tapped="TapBack_Tapped"/>
-                    </Image.GestureRecognizers>
-                </Image>
-                <Label Grid.Column="1"
-                       Grid.Row="0"
-                       TextColor="#2D150B"
-                       Text="Carrello"
-                       FontFamily="RalewayBold"
-                       FontSize="30"
-                       FontAttributes="Bold"
-                       HorizontalTextAlignment="Center" />
-                <ImageButton Source="trash.png"
-                             Grid.Column="2"
-                             Grid.Row="0"
-                             x:Name="TapClearCart" Clicked="TapClearCart_Tapped"
-                             BackgroundColor="Transparent"/>
-
-                <BoxView  Grid.Row="1" Grid.ColumnSpan="3" 
-                         WidthRequest="100" HeightRequest="1" BackgroundColor="#2D150B"/>
-
-            </Grid>
-            </StackLayout>
-            -->
+        </StackLayout>
 
     </ContentPage.Content>
 </ContentPage>

@@ -9,37 +9,79 @@
     <!--#2D150B-->
     <ContentPage.Content>
         <StackLayout>
-            <Grid Margin="20">
+            <Grid ColumnSpacing="0"
+                  HorizontalOptions="FillAndExpand"
+                  VerticalOptions="Start"
+                  RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="55" />
+                    <RowDefinition Height="55" />
+
+                </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*" />
                     <ColumnDefinition Width="8*" />
                     <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="7*"/>
-                    <RowDefinition Height="0.2*"/>
-                </Grid.RowDefinitions>
-                <Image Source="backarrow.png"
+                <Image Grid.Row="0"
                        Grid.Column="0"
-                       Grid.Row="0"
-                       HorizontalOptions="Center">
-                    <Image.GestureRecognizers>
-                        <TapGestureRecognizer x:Name="TapBack" Tapped="TapBack_Tapped" />
-                    </Image.GestureRecognizers>
-                </Image>
-                <Label x:Name="LblCategoryName"
-                       Grid.Column="1"
-                       Grid.Row="0"
-                       TextColor="AntiqueWhite"
-                       FontSize="30"
-                       FontFamily="RalewaySemiBold"
-                       HorizontalTextAlignment="Center" />
-                <BoxView Grid.Row="1" Grid.ColumnSpan="3" 
-                         WidthRequest="100" HeightRequest="1" BackgroundColor="AntiqueWhite"/>
-            </Grid>
-            
+                       Grid.RowSpan="4"
+                       Grid.ColumnSpan="3"
+                       Source="banner.png"
+                       Aspect="AspectFill" />
+                <StackLayout Orientation="Horizontal"
+                             Grid.Row="1"
+                             Grid.Column="0"
+                             Grid.ColumnSpan="3">
+                    <Image HorizontalOptions="Start"
+                           Margin="20,4,0,20"
+                           Source="backarrow.png"
+                               Grid.RowSpan="2">
 
-            <ListView Margin="0,10,0,0"
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="TapBack" Tapped="TapBack_Tapped" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Grid HorizontalOptions="EndAndExpand"
+                          Margin="0,0,20,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*" />
+                            <ColumnDefinition Width="6*" />
+                        </Grid.ColumnDefinitions>
+                        
+                        
+                        <Label x:Name="LblCategoryName"
+                               Margin="0,7,0,0"
+                               Grid.Row="0"
+                               Grid.Column="1"
+                               Grid.RowSpan="3"
+                               Grid.ColumnSpan="1" 
+                               TextColor="#2D150B"
+                               FontSize="25"
+                               FontFamily="RalewayBold"/>
+                        
+                    </Grid>
+                </StackLayout>
+                <Image Margin="5,15,5,20"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       Source="kfc.png"
+                       Aspect="AspectFit"
+                       Grid.Row="0"
+                       Grid.Column="1"
+                       Grid.RowSpan="3" 
+                       />
+            </Grid>
+
+
+            <ListView Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2"
+                      Margin="0,10,0,0"
                       x:Name="CvProducts"
                       SelectionMode="Single"
                       ItemsSource="{Binding ProductByCategoryCollection}"
@@ -94,57 +136,35 @@
                 </ListView.ItemTemplate>
             </ListView>
             <!--
-            <CollectionView x:Name="CvProducts"
-                            SelectionMode="Single"
-                            SelectionChanged="CvProducts_SelectionChanged">
-                <CollectionView.ItemsLayout>
-                    <GridItemsLayout Orientation="Vertical"
-                                     Span="2" />
-                </CollectionView.ItemsLayout>
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <StackLayout Spacing="5"
-                                     Padding="10"
-                                     Margin="15,0,15,0"
-                                     Orientation="Vertical">
-
-                            <Frame Padding="0"
-                                   CornerRadius="90"
-                                   IsClippedToBounds="True"
-                                   HeightRequest="130"
-                                   WidthRequest="130"
-                                   HorizontalOptions="Center"
-                                   HasShadow="True">
-
-                                <Image Aspect="AspectFill"
-                                   HorizontalOptions="FillAndExpand"
-                                   VerticalOptions="FillAndExpand"
-                                   Source="{Binding FullImageUrl}"/>
-                            </Frame>
-
-                            <Label Margin="0,10,0,10"
-                                   TextColor="#DAAE6F"
-                                   Text="{Binding name}"
-                                   FontFamily="RalewayMedium"
-                                   FontSize="Medium"
-                                   HorizontalTextAlignment="Center"/>
-
-                            <Label TextColor="#FFC943"
-                                   Text="{Binding price ,StringFormat='€{0}'}"
-                                   FontSize="Large"
-                                   FontAttributes="Bold"
-                                   FontFamily="RalewayBold"
-                                   HorizontalTextAlignment="Center"/>
-                            
-                            <BoxView 
-                                    HeightRequest="2" 
-                                    WidthRequest="100" 
-                                    BackgroundColor="#2D150B" 
-                                    Margin="20,10,20,10"/>
-                        </StackLayout>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+           <Grid Margin="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="8*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2.5*"/>
+                    <RowDefinition Height="0.2*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Image Source="backarrow.png"
+                       Grid.Column="0"
+                       Grid.Row="0"
+                       HorizontalOptions="Center">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="TapBack" Tapped="TapBack_Tapped" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label x:Name="LblCategoryName"
+                       Grid.Column="1"
+                       Grid.Row="0"
+                       TextColor="AntiqueWhite"
+                       FontSize="30"
+                       FontFamily="RalewaySemiBold"
+                       HorizontalTextAlignment="Center" />
+                <BoxView Grid.Row="1" Grid.ColumnSpan="3" 
+                         WidthRequest="100" HeightRequest="1" BackgroundColor="AntiqueWhite"/>
+            </Grid>
             -->
 
         </StackLayout>

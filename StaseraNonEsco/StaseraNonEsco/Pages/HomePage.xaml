@@ -8,6 +8,7 @@
              NavigationPage.HasNavigationBar="False"
              BackgroundColor="AntiqueWhite">
     <ContentPage.Content>
+        
         <Grid>
             <CollectionView x:Name="CvProducts"
                             SelectionMode="Single"
