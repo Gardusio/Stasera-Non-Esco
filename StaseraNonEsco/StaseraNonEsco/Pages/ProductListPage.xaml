@@ -8,6 +8,12 @@
              BackgroundColor="#2D150B">
     <!--#2D150B-->
     <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
         <StackLayout>
             <Grid ColumnSpacing="0"
                   HorizontalOptions="FillAndExpand"
@@ -79,7 +85,7 @@
                        />
             </Grid>
 
-
+            
             <ListView Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2"
                       Margin="0,10,0,0"
                       x:Name="CvProducts"
@@ -168,5 +174,6 @@
             -->
 
         </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

@@ -220,7 +220,7 @@
                         </Grid.GestureRecognizers>
                     </Grid>
                 </StackLayout>
-                <Image Margin="12,15,0,0"
+                <Image Margin="10,20,0,0"
                        HorizontalOptions="CenterAndExpand"
                        VerticalOptions="CenterAndExpand"
                        Source="kfc.png"
