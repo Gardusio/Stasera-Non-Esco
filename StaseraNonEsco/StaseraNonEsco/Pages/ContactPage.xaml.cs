@@ -24,7 +24,7 @@ namespace StaseraNonEsco.Pages
 
         private void BtnCall_Clicked(object sender, EventArgs e)
         {
-            PhoneDialer.Open("36656656");
+            PhoneDialer.Open("0686706105");
         }
     }
 }
