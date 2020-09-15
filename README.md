@@ -2,7 +2,7 @@ Screencast: https://drive.google.com/file/d/1jStja5e4lbWbVCNnpfmRhoXcg23FTblj/vi
 
 Brief description:
 
-	Simple mobile app to manage incoming delivery-orders. The app is thought for the shop in wich i worked as a rider.
+	Simple mobile app to make delivery orders. The app is thought for the shop in wich i worked as a rider.
 	
 	The shop (Stasera Non Esco) is actually trying to buy an orders management system. This repo contains a first demo-proposal for them. 
 	
