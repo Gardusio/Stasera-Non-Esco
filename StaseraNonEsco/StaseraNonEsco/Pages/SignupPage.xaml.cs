@@ -34,7 +34,7 @@ namespace StaseraNonEsco.Pages
                 }
                 else
                 {
-                    await DisplayAlert("Oops", "Qualcosa è andato storto", "Cancella");
+                    await DisplayAlert("Oops", "Questa email è gia in uso!", "Cancella");
                 }
             }
         }
