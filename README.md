@@ -3,6 +3,11 @@ Brief description:
 	Simple mobile app to manage incoming delivery-orders.
 	
 	The shop (Stasera Non Esco) is actually searching for someone to implement an orders management system. This repo contains a first demo-proposal for them.
+
+Backlog today (TODO) :
+- Credentials recovery.
+- Delivery 
+- Order confirmation logic (confirmed, completed)
 	
 	
 Tech-spech:
