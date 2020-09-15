@@ -31,6 +31,7 @@ namespace StaseraNonEsco.Pages
                 OrdersCollection.Add(order);
             }
             LvOrders.ItemsSource = OrdersCollection;
+            
         }
 
         private void TapBack_Tapped(object sender, EventArgs e)

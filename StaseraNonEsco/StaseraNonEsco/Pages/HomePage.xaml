@@ -251,7 +251,7 @@
                                      VerticalOptions="Center"
                                      Spacing="0"
                                      Margin="15,0,15,0">
-                            <Label Text="Benvenuto!"
+                            <Label Text="Benvenuto"
                                    FontSize="Medium"
                                    TextColor="#2D150B" 
                                    FontFamily="RalewayBold"/>

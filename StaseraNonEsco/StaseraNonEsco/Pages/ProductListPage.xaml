@@ -43,6 +43,7 @@
                             <TapGestureRecognizer x:Name="TapBack" Tapped="TapBack_Tapped" />
                         </Image.GestureRecognizers>
                     </Image>
+                    
                     <Grid HorizontalOptions="EndAndExpand"
                           Margin="0,0,20,0">
                         <Grid.RowDefinitions>
@@ -79,7 +80,7 @@
             </Grid>
 
             
-            <ListView Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2"
+            <ListView Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" 
                       Margin="0,10,0,0"
                       x:Name="CvProducts"
                       SelectionMode="Single"
@@ -87,26 +88,26 @@
                       ItemSelected="CvProducts_SelectionChanged"
                       CachingStrategy="RecycleElement"
                       HasUnevenRows="False"
-                      RowHeight="100"
+                      RowHeight="120"
                       SeparatorColor="#DAAE6F">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell >
-                            <Grid Margin="20,10,20,10" >
+                            <Grid Margin="0,20,0,0" ColumnSpacing="10">
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="3*"/>
-                                    <ColumnDefinition Width="7*"/>
-                                    <ColumnDefinition Width="3*"/>
+                                    <ColumnDefinition Width="0.8*"/>
+                                    <ColumnDefinition Width="1.8*"/>
+                                    <ColumnDefinition Width="0.5*"/>
                                 </Grid.ColumnDefinitions>
 
-                                <Frame Grid.Column="0"
-                                       Padding="0"
-                                       CornerRadius="90"
-                                       IsClippedToBounds="True"
-                                       HeightRequest="80"
-                                       WidthRequest="80"
-                                       HorizontalOptions="Start">
 
+                                <Frame Grid.Column="0"
+                                       Grid.Row="0"
+                                       Margin="0,0,0,10"
+                                       Padding="0"
+                                       CornerRadius="150"
+                                       >
+                                        
                                     <Image Aspect="AspectFill"
                                            HorizontalOptions="FillAndExpand"
                                            VerticalOptions="FillAndExpand"
@@ -121,7 +122,7 @@
                                            FontSize="Medium"/>
 
                                     <Label TextColor="AntiqueWhite"
-                                           Text="Descrizione Semplice"
+                                           Text="{Binding simpleDescription}"
                                            FontSize="Small"
                                            FontFamily="RalewayRegular"/>
 
@@ -129,9 +130,8 @@
 
                                 <Label Grid.Column="2"
                                        TextColor="#FFC943"
-                                       Margin="30,0,0,0"
                                        Text="{Binding price ,StringFormat='€{0}'}"
-                                       FontSize="25"
+                                       FontSize="Large"
                                        FontFamily="RalewayBold"
                                        VerticalTextAlignment="Center"/>
 

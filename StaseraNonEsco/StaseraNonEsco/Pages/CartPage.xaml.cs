@@ -69,5 +69,9 @@ namespace StaseraNonEsco.Pages
                 Navigation.PushModalAsync(new PlaceOrderPage(Convert.ToDouble(LblTotalPrice.Text)));
             }
         }
+
+        private void LvShoppingCart_ItemSelected(object sender, SelectedItemChangedEventArgs e) {
+
+        }
     }
 }

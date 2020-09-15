@@ -8,12 +8,12 @@
              BackgroundColor="AntiqueWhite"
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
-        <ScrollView>
+
             <Grid RowSpacing="20"
-              Margin="20,20,20,0">
+              Margin="10">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="1.8*"/>
-                    <RowDefinition Height="4*"/>
+                    <RowDefinition Height="1.5*"/>
+                    <RowDefinition Height="3*"/>
                     <RowDefinition Height="2*"/>
                 </Grid.RowDefinitions>
 
@@ -22,10 +22,11 @@
                    Source="kfc.png"
                    Aspect="AspectFit" 
                    Grid.Row="0"/>
+                
                 <StackLayout Grid.Row="1">
-                    <Frame Margin="20,10,20,10" 
+                    <Frame Margin="20,0,20,20" 
                            CornerRadius="50">
-                        <StackLayout Padding="30,10,30,0" Spacing="20">
+                        <StackLayout Padding="10,0,10,0" Spacing="10">
                             <Entry 
                                Placeholder="Nome e Cognome"
                                PlaceholderColor="#80574D"
@@ -57,7 +58,7 @@
                     </Frame>
                 </StackLayout>
 
-                <StackLayout Padding="70,0,70,0" Grid.Row="2" >
+                <StackLayout Padding="70,10,70,0" Grid.Row="2" >
                     <Button Text="CONTINUA"
                         TextColor="#DAAE6F"
                         BackgroundColor="#2D150B"
@@ -80,6 +81,6 @@
                         Clicked="BtnLogin_Clicked"/>
                 </StackLayout>
             </Grid>
-        </ScrollView>
+
     </ContentPage.Content>
 </ContentPage>

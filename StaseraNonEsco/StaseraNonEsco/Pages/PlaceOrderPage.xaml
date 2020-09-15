@@ -9,27 +9,21 @@
     <ContentPage.Content>
         <StackLayout Spacing="20"
                      Margin="25">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*" />
-                    <ColumnDefinition Width="8*" />
-                    <ColumnDefinition Width="1*" />
-                </Grid.ColumnDefinitions>
-                
-                <Label Grid.Column="1"
+            
+            <Label Grid.Column="1"
                        TextColor="#2D150B"
                        FontFamily="RalewayBold"
-                       Text="Effettua l'ordine"
+                       Text="Ci sei quasi!"
                        FontSize="25"
                        VerticalOptions="Center"
                        HorizontalTextAlignment="Center"
                        HorizontalOptions="Center" />
-            </Grid>
+            
             <Frame HasShadow="True"
-                   Padding="25"
-                   Margin="0,30,0,30"
+                   Padding="20"
+                   Margin="0,10,0,30"
                    CornerRadius="35">
-                <StackLayout Margin="0,40,0,40" Spacing="10">
+                <StackLayout Margin="0,20,0,40" Spacing="10">
                     <Label Text="Informazioni Consegna" Margin="0,0,0,20"
                            FontAttributes="Bold"
                            FontSize="Large"
@@ -39,6 +33,7 @@
                     <Entry Placeholder="Nome"
                            FontFamily="RalewayRegular"
                            PlaceholderColor="#80574D"
+                           Text=""
                            TextColor="#80574D"
                            x:Name="EntName"
                            Keyboard="Text" />

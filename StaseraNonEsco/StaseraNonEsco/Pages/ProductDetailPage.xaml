@@ -7,7 +7,7 @@
              x:Class="StaseraNonEsco.Pages.ProductDetailPage"
              BackgroundColor="AntiqueWhite">
     <ContentPage.Content>
-        <ScrollView>
+
             <StackLayout>
                 <Grid>
                     <Image x:Name="ImgProduct"
@@ -107,6 +107,6 @@
                             Clicked="BtnAddToCart_Clicked"/>
                 </StackLayout>
             </StackLayout>
-        </ScrollView>
+
     </ContentPage.Content>
 </ContentPage>

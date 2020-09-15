@@ -51,8 +51,8 @@
                                                FontFamily="RalewayRegular"
                                                TextColor="#2D150B"
                                                HorizontalOptions="Center" />
-                                        <Label TextColor="#2D150B"
-                                               FontSize="Medium"
+                                        <Label TextColor="#80574D"
+                                               
                                                FontFamily="RalewayRegular"
                                                HorizontalOptions="Center"
                                                Text="{Binding qty}" />
@@ -63,21 +63,23 @@
                                                FontFamily="RalewayRegular"
                                                TextColor="#2D150B"
                                                HorizontalOptions="Center" />
-                                        <Label FontSize="Medium"
+                                        <Label 
                                                FontFamily="RalewayRegular"
-                                               TextColor="#2D150B"
+                                               TextColor="#80574D"
                                                HorizontalOptions="Center"
                                                Text="{Binding price,StringFormat='x {0}'}" />
                                     </StackLayout>
                                     <StackLayout Grid.Column="2">
                                         <Label Text="Sub Totale"
                                                FontSize="Medium"
+                                               
                                                FontFamily="RalewayRegular"
                                                TextColor="#2D150B"
                                                HorizontalOptions="Center" />
                                         <Label TextColor="#80574D"
+                                               FontFamily="RalewayRegular"
                                                HorizontalOptions="Center"
-                                               Text="{Binding totalAmount , StringFormat='{0} $'}"/>
+                                               Text="{Binding totalAmount , StringFormat='{0}€'}"/>
                                     </StackLayout>
                                 </Grid>
                             </StackLayout>
@@ -95,7 +97,7 @@
                                x:Name="LblTotalPrice"
                                FontSize="Large"
                                FontFamily="RalewayBold"
-                               TextColor="#2D150B"/>
+                               TextColor="#80574D"/>
                     </StackLayout>
                 </ListView.Footer>
             </ListView>

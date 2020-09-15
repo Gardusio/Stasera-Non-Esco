@@ -87,23 +87,25 @@
                        FontSize="25"/>
 
             <ListView x:Name="LvShoppingCart"
-                      SelectionMode="None"
+                      SelectionMode="Single"
+                      ItemSelected="LvShoppingCart_ItemSelected"
                       Margin="0,10,0,0"
                       CachingStrategy="RecycleElement"
                       HasUnevenRows="True"
                       SeparatorColor="#2D150B">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell >
+                        <ViewCell>
                             <StackLayout Margin="20,10,20,10" >
+                                
                                 <Label TextColor="#2D150B"
-                                       FontSize="Large"
+                                       FontSize="Medium"
                                        FontFamily="RalewayBold"
                                        Text="{Binding productName}"/>
                                 <StackLayout Orientation="Horizontal">
                                     <Label CharacterSpacing="1"
                                            TextColor="#2D150B"
-                                           FontSize="Large"
+                                           FontSize="Medium"
                                            FontFamily="RalewayMedium"
                                            Text="{Binding qty}"/>
                                     <Label Text="x"

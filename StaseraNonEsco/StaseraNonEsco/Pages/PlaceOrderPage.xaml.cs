@@ -14,6 +14,7 @@ namespace StaseraNonEsco.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PlaceOrderPage : ContentPage
     {
+        private static String name = Preferences.Get("username", String.Empty);
         private double _totalPrice;
         public PlaceOrderPage(double totalPrice)
         {
@@ -33,11 +34,11 @@ namespace StaseraNonEsco.Pages
 
                 var response = await ApiService.PlaceOrder(order);
                 if (response != null) {
-                    await DisplayAlert("", "Grazie! Attendi la conferma dell'ordine e intanto, rilassati..arriviamo con la cena!" + response.orderId, "Ok");
+                    await DisplayAlert("", "Grazie! Attendi la conferma dell'ordine e intanto, rilassati..arriviamo con la cena!", "Ok");
                     Application.Current.MainPage = new NavigationPage(new HomePage());
                 }
                 else {
-                    await DisplayAlert("Oops", "Qualcosa è andato storto, riprova tra poco", "Ok");
+                    await DisplayAlert("Oops", "Qualcosa è andato storto, riprova tra poco oppure chiamaci!", "Ok");
                 }
             
             

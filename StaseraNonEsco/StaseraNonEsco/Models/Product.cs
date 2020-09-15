@@ -12,6 +12,7 @@ namespace StaseraNonEsco.Models
         public string imageUrl { get; set; }
         public double price { get; set; }
         public bool isPopularProduct { get; set; }
+        public String simpleDescription { get; set; }
         public int categoryId { get; set; }
         public object imageArray { get; set; }
 

@@ -33,7 +33,7 @@ namespace StaseraNonEsco.Pages
 
             LvOrderDetail.ItemsSource = OrderDetailCollection;
 
-            LblTotalPrice.Text = orders[0].orderTotal + " $ ";
+            LblTotalPrice.Text = orders[0].orderTotal + "€";
         }
 
         private void TapBack_Tapped(object sender, EventArgs e)
